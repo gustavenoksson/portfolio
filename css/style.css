@@ -17,7 +17,7 @@
 body {
     font-family: 'Bebas Neue', cursive;
     background-color: var(--bg-color-lightblue);
-    color: rgb(255, 255, 255);
+    color: var(--bg-color-white);
 }
 
 main {
@@ -29,17 +29,17 @@ html {
 }
 
 h2 {
-    font-size: 45px;
+    font-size: 40px;
 }
 
 h2 span {
-    border-bottom: 30px solid var(--bg-color-darkpurple);
+    border-bottom: 20px solid var(--bg-color-darkpurple);
     line-height: 0px;
     display: inline-block;
 }
 
 h1, h3 {
-    font-size: 43px;
+    font-size: 35px;
     padding-top: 25px;
 }
 
@@ -175,7 +175,7 @@ nav ul a:hover {
 }
 
 .hero-icons img {
-    height: 60px;
+    height: 40px;
     width: auto;
 }
 
