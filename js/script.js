@@ -1,5 +1,6 @@
 const sections = document.querySelectorAll("section");
 const navItems = document.querySelectorAll("nav a");
+const imageContainers = document.querySelectorAll(".project-img-container")
 
 const timelineSvg = document.querySelector(".timeline-svg");
 
@@ -25,3 +26,21 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
   observer.observe(section);
 });
+
+
+const projectsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add('active-img');
+      } else {
+        entry.target.classList.remove('active-img');
+      }
+  });
+}, { threshold: 1 });
+
+imageContainers.forEach(container => {
+  projectsObserver.observe(container);
+});
+
+
+

@@ -192,10 +192,9 @@ nav ul a:hover {
     scale: 1.2;
 }
 
-
 /* projects-section */
 .projects-section {
-    height: 100vh;
+    height: 100%;
     position: relative;
 }
 
@@ -206,31 +205,66 @@ nav ul a:hover {
 }
 
 .timeline-svg {
-    height: 90vh;
-    stroke-dasharray: 1500;
-    stroke-dashoffset: 1500;
-    stroke-width: 2px;
+    display: none;
 }
 
 .timeline-animate {
     animation: draw 3s 0.3s ease forwards;
 }
 
-.project {
-    position: absolute;
+.showcase {
+    padding-top: 30px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    top: 110px;
-    left: 100;
+    justify-content: flex-start;
+}
+
+.project {
+    padding-bottom: 25px;
 }
 
 .project h4 {
-    font-size: 20px;
+    font-size: 24px;
+    padding: 10px 0 10px 0;
 }
 
-.project img {
-    height: 100px;
-    width: auto;
+.project-img-container {
+    overflow: hidden;
+    max-height: 600px;
+    width: 100%;
+}
+
+.project-img-container img {
+    transition: 0.5s ease;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    transition: 0.5s ease;
+    filter: grayscale();
+}
+
+.project-img-container:hover img {
+    scale: 1.05;
+}
+
+.project-img-container.active-img img {
+    opacity: 1;
+    filter: none;
+}
+
+.project-info {
+    display: flex;
+    gap: 10px;
+}
+
+.info-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    padding: 0 10px 0 10px;
+    background-color: #a1a9ee82;
 }
 
 /* contact-section */
@@ -315,5 +349,23 @@ nav ul a:hover {
 
     .nav-active, nav ul a:hover {
         font-size: 24px;
+    }
+
+    .timeline-svg {
+        display: block;
+        height: 90vh;
+        stroke-dasharray: 1500;
+        stroke-dashoffset: 1500;
+        stroke-width: 2px;
+    }
+
+    .project {
+        position: absolute;
+        top: 85px;
+    }
+
+    .project img {
+        height: 60px;
+        width: auto;
     }
 }
